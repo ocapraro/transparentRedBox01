@@ -40,15 +40,18 @@ struct ARViewContainer: UIViewRepresentable {
         guard let entity = entity else { return }
         // Do something with entity...
         print(entity.name)
-    
+        
+        
+        //Color Stuff ---------------------------------------------------
         var material = SimpleMaterial(color: .red, isMetallic: false)
         material.metallic = MaterialScalarParameter(floatLiteral: 0.0)
         material.roughness = MaterialScalarParameter(floatLiteral: 1.0)
-        material.tintColor = UIColor.red
+        material.tintColor = UIColor.red //tint
         material.baseColor = MaterialColorParameter.color(UIColor(red: 1.0,
         green: 0.0,
          blue: 0.0,
-         alpha: 0.75))
+         alpha: 0.75))//opacity
+        //-----------------------------------------------------------------
         
         let box = entity.scene?.findEntity(named: "box")
         print(box?.name as Any)
